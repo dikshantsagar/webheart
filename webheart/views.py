@@ -38,7 +38,6 @@ def inference(request):
                                             max_features='auto',
                                             max_leaf_nodes=None,
                                             min_impurity_decrease=0.0,
-                                            min_impurity_split=None,
                                             bootstrap=False,
                                             oob_score=False,
                                             random_state=7,
