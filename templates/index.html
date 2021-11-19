@@ -1,0 +1,308 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Home - PAI-BPR</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="https://kit.fontawesome.com/e0a08b5c11.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <nav class="navbar-fixed">
+    <nav class="grey darken-4" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+          Heart Disease Mortality Prediction <i class="fas fa-heartbeat fa-lg cyan-text"></i>
+        </a>
+        
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+  </nav>
+  
+
+  <div class="container">
+      <h4>Enter Patient Details:</h4>
+      <ul class="collection">
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Age</div>
+                <div class="col s3"><input id="age" type="number" class="validate"></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Gender</div>
+                <div class="col s3"><div class="switch"><label>Male<input type="checkbox"  id="gender"><span class="lever"></span>Female</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Syncope</div>
+                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="syncope"><span class="lever"></span>Present</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Diaphoresis</div>
+                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="diaphoresis"><span class="lever"></span>Present</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Mitral Regurgitation</div>
+                
+                <div class="input-field col s3">
+                 <select id="mr">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">No</option>
+                    <option value="2">Mild</option>
+                    <option value="3">Moderate</option>
+                    <option value="4">Severe</option>
+                  </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Heart Failure at presentation</div>
+                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="hfap"><span class="lever"></span>Present</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Cardiogenic Shock at presentation</div>
+                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="csap"><span class="lever"></span>Present</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Delay to Hospital (If patient delay more than 6hr after MI)</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="delay"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Wall</div>
+                <div class="input-field col s3">
+                    <select id="wall">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="1">Anterior Wall MI</option>
+                       <option value="2">Posterior Wall MI</option>
+                       <option value="3">Lateral Wall MI</option>
+                       <option value="4">Inferior Wall MI</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Angiography</div>
+                <div class="input-field col s3">
+                    <select multiple id="angiography">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="1">LAD Angiography</option>
+                       <option value="2">LCX Angiography</option>
+                       <option value="3">LMCA Angiography</option>
+                       <option value="4">RCA Angiography</option>
+                       <option value="5">SCAD Angiography</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">TIMI flow grade</div>
+                <div class="input-field col s3">
+                    <select id="timi">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">RCA</div>
+                <div class="input-field col s3">
+                    <select id="rca">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Diabetes Mellitus</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="diamel"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Hypertension</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="hyp"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">PCI</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="pci"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">PCI Timing</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="pcitime"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Hemoglobin</div>
+                <div class="col s3"><input id="hemoglobin" type="number" class="validate"></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Serum Creatinine</div>
+                <div class="col s3"><input id="creatinine" type="number" class="validate"></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">HbA1C</div>
+                <div class="col s3"><input id="hb1ac" type="number" class="validate"></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Family History of CAD</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="famcad"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">Physical Activity</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="physactivity"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Smoking Packs a year</div>
+                <div class="col s3">
+                    <div class="row">
+                        <div class="col s6">
+                            <input placeholder="" id="cigperday" type="number" class="validate">
+                            <label for="ciggs">Cigarettes per day</label>
+                        </div>
+                        <div class="col s6">
+                            <input  id="smokingyears" type="number" class="validate">
+                            <label for="ciggs">Years</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row mbot">
+                <div class="col s9">Ejection Fraction</div>
+                <div class="col s3">
+                    <p class="range-field">
+                        <input type="range" id="ejfrac" min="0" max="90" value="0"/>
+                    </p></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">H/o ACE ARB</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="acearb"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+        <li class="collection-item">
+            <div class="row">
+                <div class="col s9">H/o Beta Blockers</div>
+                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="beta"><span class="lever"></span>YES</label></div></div>
+            </div>
+        </li>
+      </ul>
+      <form class="row form center" id="pred" method='POST' onsubmit="return false">
+        {% csrf_token %}
+        <a class="waves-effect waves-light btn-large cyan predict modal-trigger" href='#predmodal'>Predict</a>
+      </form>
+      
+  </div>
+  
+  <div class="modal" id="predmodal">
+      <div class="modal-content">
+        <h1>
+            Mortality Prediction
+        </h1>
+        <div class="row">
+            <div class="col s10" style="margin-top: 20px;">
+                <div class="progress red ">
+                    <div class="determinate cyan" id="measure"></div>
+                </div>
+            </div>
+            <div class="col s2">
+                <h2 id="meas" style="margin-top: 0;"></h2>
+            </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a href="." class="modal-close waves-effect waves-green btn-flat">Try Again</a>
+      </div>
+  </div>
+
+
+  
+
+  <footer class="page-footer cyan">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">SBI Lab</h5>
+          <ul>
+            <li><a class="black-text text-lighten-3" href="http://sbilab.iiitd.edu.in/">SBI Lab Home Home</a></li>
+          </ul>
+          
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">IIIT Delhi</h5>
+          <ul>
+            <li><a class="black-text text-lighten-3" href="https://iiitd.ac.in/">IIITD Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      WebApp by <a class="black-text text-lighten-3" href="https://www.linkedin.com/in/dikshant-sagar-1964b7110/">Dikshant Sagar</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+
+</body>
+</html>

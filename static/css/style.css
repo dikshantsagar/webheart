@@ -1,0 +1,92 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+body{
+  
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+
+.art{
+  margin: 1%;
+  padding: 1%;
+}
+
+.l{
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+
+
+.checkbox-orange[type="checkbox"].filled-in:checked + span:not(.lever):after 
+{
+    border: 2px solid #f3983e;  
+    background-color: #f3983e;
+}
+
+.radio-orange[type="radio"]:checked + span:not(.lever):after 
+{
+    border: 2px solid #f3983e;  
+    background-color: #f3983e;
+}
+
+
+
+.butcard{
+  background: none;
+  color: #212121;
+  box-shadow: none;
+}
+
+.butcard:hover{
+  font-size: 1.2em;
+}
+
+#modal3{
+  min-height: 85vh;
+  min-width: 80vw;
+}
+
+
+
+
+.numbering{
+  border: #212121;
+  color: white;
+  background-color: #212121;
+  border-radius: 50%;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  height: 25px;
+  width: 25px;
+}
+
+
+
+.hidden{
+  visibility: hidden;
+}
+
+
+.mbot{
+  margin-bottom: 0;
+}
+
+.progress {
+  background-color: red;
+  
+
