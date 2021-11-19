@@ -133,6 +133,9 @@
        type: "POST",
        url : "/inference",
        data: {'datainf': data.toString()},
+       error: function(xhr, error){
+        console.debug(xhr); console.debug(error);
+         },
        success: function(resp){
         output = JSON.parse(resp).output;
         console.log(output);
