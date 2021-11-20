@@ -56,5 +56,5 @@ def inference(request):
 
         
 
-    return HttpResponse(json.dumps(dict({'output':output.tolist()[0][0]})))
+    return HttpResponse(json.dumps(dict({'output':output.tolist()[0][1]})))
 
