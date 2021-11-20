@@ -1,5 +1,6 @@
 scikit-learn
 gunicorn
 django-heroku
+openpyxl
 pandas
 lime
