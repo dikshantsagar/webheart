@@ -40,7 +40,6 @@ def inference(request):
                                             min_weight_fraction_leaf=0.01,
                                             max_features='auto',
                                             min_impurity_decrease=0.0,
-                                            min_impurity_split=None,
                                             bootstrap=False,
                                             oob_score=False,
                                             random_state=7,
