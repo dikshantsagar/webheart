@@ -1,3 +1,5 @@
 scikit-learn
 gunicorn
 django-heroku
+pandas
+lime
