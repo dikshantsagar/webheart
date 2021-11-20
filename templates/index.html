@@ -12,18 +12,16 @@
   <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="https://kit.fontawesome.com/e0a08b5c11.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
   
   <nav class="navbar-fixed">
     <nav class="grey darken-4" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">
-          Heart Disease Mortality Prediction <i class="fas fa-heartbeat fa-lg cyan-text"></i>
+        <a id="logo-container" href="#" class="headboard">
+            STEMI mortality risk calculator <i class="fas fa-heartbeat fa-lg cyan-text"></i>
         </a>
         
-        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
   </nav>
@@ -91,7 +89,7 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Wall</div>
+                <div class="col s9">Heart wall Involved</div>
                 <div class="input-field col s3">
                     <select id="wall">
                        <option value="" disabled selected>Choose your option</option>
@@ -105,7 +103,7 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Angiography</div>
+                <div class="col s9">Culprit Coronary Artery in Algorithm</div>
                 <div class="input-field col s3">
                     <select multiple id="angiography">
                        <option value="" disabled selected>Choose your option</option>
@@ -120,7 +118,7 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">TIMI flow grade</div>
+                <div class="col s9">LAD TIMI flow grade</div>
                 <div class="input-field col s3">
                     <select id="timi">
                        <option value="" disabled selected>Choose your option</option>
@@ -134,7 +132,7 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">RCA</div>
+                <div class="col s9">RCA  TIMI flow grade</div>
                 <div class="input-field col s3">
                     <select id="rca">
                        <option value="" disabled selected>Choose your option</option>
@@ -160,31 +158,31 @@
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">PCI</div>
+                <div class="col s9">PCI Performed</div>
                 <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="pci"><span class="lever"></span>YES</label></div></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">PCI Timing</div>
+                <div class="col s9">PCI performed < 12hr </div>
                 <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="pcitime"><span class="lever"></span>YES</label></div></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Hemoglobin</div>
+                <div class="col s9">Hemoglobin (g%)</div>
                 <div class="col s3"><input id="hemoglobin" type="number" class="validate"></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Serum Creatinine</div>
+                <div class="col s9">Serum Creatinine (mg/dL)</div>
                 <div class="col s3"><input id="creatinine" type="number" class="validate"></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">HbA1C</div>
+                <div class="col s9">HbA1C (%)</div>
                 <div class="col s3"><input id="hb1ac" type="number" class="validate"></div>
             </div>
         </li>
@@ -220,7 +218,7 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Ejection Fraction</div>
+                <div class="col s9">Ejection Fraction (%)</div>
                 <div class="col s3">
                     <p class="range-field">
                         <input type="range" id="ejfrac" min="0" max="90" value="0"/>
@@ -265,6 +263,7 @@
 
       </div>
       <div class="modal-footer">
+        <a href="/insight" class="modal-close waves-effect waves-green btn-flat">See Insights</a>
         <a href="." class="modal-close waves-effect waves-green btn-flat">Try Again</a>
       </div>
   </div>
