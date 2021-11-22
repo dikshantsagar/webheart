@@ -251,9 +251,21 @@
             Mortality Prediction
         </h1>
         <div class="row">
-            <div class="col s10" style="margin-top: 20px;">
-                <div class="progress red ">
-                    <div class="determinate cyan" id="measure"></div>
+            <div class="col s10 center" style="margin-top: 20px;">
+
+                <div class="preloader-wrapper big active" id="loader">
+                    <div class="spinner-layer spinner-blue-only">
+                      <div class="circle-clipper left">
+                        <div class="circle"></div>
+                      </div><div class="gap-patch">
+                        <div class="circle"></div>
+                      </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="progress cyan hidden" id="progbar">
+                    <div class="determinate red" id="measure"></div>
                 </div>
             </div>
             <div class="col s2">
