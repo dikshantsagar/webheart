@@ -141,6 +141,8 @@
         console.log(output);
         console.log("data sent successfully");
         $('#result').removeClass('hidden');
+        $('#progbar').removeClass('hidden');
+        $('#loader').remove();
         console.log(output);
         $('#measure').css('width',(output*100).toString()+"%");
         $('#meas').html((Math.round(output*100).toString()+"%"));
