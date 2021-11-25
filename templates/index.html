@@ -15,11 +15,12 @@
 </head>
 <body>
   
-  <nav class="navbar-fixed">
+  <nav class="navbar">
     <nav class="grey darken-4" role="navigation">
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="headboard">
-            <i class="fas fa-heartbeat fa-lg cyan-text"></i> STEMI Mortality Risk Calculator 
+         <i class="fas fa-heartbeat fa-lg cyan-text"></i>
+         STEMI mortality risk calculator <span class="cyan-text"> [ Version 1.0 ]</span>
         </a>
         
       </div>
@@ -28,37 +29,50 @@
   
 
   <div class="container">
+    
+        <h3>sOME HEADING</h3>
+        <P>sOME CONTENT</P>
+    
       <h4>Enter Patient Details:</h4>
       <ul class="collection">
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Age</div>
-                <div class="col s3"><input id="age" type="number" class="validate"></div>
+                <div class="col s4 l8">Age</div>
+                <div class="col s8 l4"><input id="age" type="number" class="validate"></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Gender</div>
-                <div class="col s3"><div class="switch"><label>Male<input type="checkbox"  id="gender"><span class="lever"></span>Female</label></div></div>
+                <div class="col s4 l8">Gender</div>
+                <div class="col s8 l4">
+                    <label><input name="group1" type="radio" checked /><span>Male</span></label>  
+                    <label><input name="group1" type="radio"  id="gender"/><span>Female</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Syncope</div>
-                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="syncope"><span class="lever"></span>Present</label></div></div>
+                <div class="col s4 l8">Syncope</div>
+                <div class="col s8 l4">
+                    <label><input name="group2" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group2" type="radio"  id="syncope"/><span>Present</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Diaphoresis</div>
-                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="diaphoresis"><span class="lever"></span>Present</label></div></div>
+                <div class="col s4 l8">Diaphoresis</div>
+                <div class="col s8 l4">
+                    <label><input name="group3" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group3" type="radio"  id="diaphoresis"/><span>Present</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Mitral Regurgitation</div>
+                <div class="col s4 l8">Mitral Regurgitation</div>
                 
-                <div class="input-field col s3">
+                <div class="input-field col s8 l4">
                  <select id="mr">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">No</option>
@@ -71,26 +85,34 @@
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Heart Failure at presentation</div>
-                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="hfap"><span class="lever"></span>Present</label></div></div>
+                <div class="col s4 l8">Heart Failure at presentation</div>
+                <div class="col s8 l4">
+                    <label><input name="group4" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group4" type="radio"  id="hfap"/><span>Present</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Cardiogenic Shock at presentation</div>
-                <div class="col s3"><div class="switch"><label>Absent<input type="checkbox" id="csap"><span class="lever"></span>Present</label></div></div>
+                <div class="col s4 l8">Cardiogenic Shock at presentation</div>
+                <div class="col s8 l4">
+                    <label><input name="group5" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group5" type="radio"  id="csap"/><span>Present</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Delay to Hospital (If patient delay more than 6hr after MI)</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="delay"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">Delay to Hospital (If patient delay more than 6hr after MI)</div>
+                <div class="col s8 l4">
+                    <label><input name="group6" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group6" type="radio"  id="delay"/><span>YES</span></label>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Heart wall Involved</div>
-                <div class="input-field col s3">
+                <div class="col s4 l8">Heart wall Involved</div>
+                <div class="input-field col s8 l4">
                     <select id="wall">
                        <option value="" disabled selected>Choose your option</option>
                        <option value="1">Anterior Wall MI</option>
@@ -103,8 +125,8 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Culprit Coronary Artery in Algorithm</div>
-                <div class="input-field col s3">
+                <div class="col s4 l8">Culprit Coronary Artery in Algorithm</div>
+                <div class="input-field col s8 l4">
                     <select multiple id="angiography">
                        <option value="" disabled selected>Choose your option</option>
                        <option value="1">LAD Angiography</option>
@@ -118,8 +140,8 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">LAD TIMI flow grade</div>
-                <div class="input-field col s3">
+                <div class="col s4 l8">LAD TIMI flow grade</div>
+                <div class="input-field col s8 l4">
                     <select id="timi">
                        <option value="" disabled selected>Choose your option</option>
                        <option value="0">0</option>
@@ -132,8 +154,8 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">RCA  TIMI flow grade</div>
-                <div class="input-field col s3">
+                <div class="col s4 l8">RCA  TIMI flow grade</div>
+                <div class="input-field col s8 l4">
                     <select id="rca">
                        <option value="" disabled selected>Choose your option</option>
                        <option value="0">0</option>
@@ -146,62 +168,80 @@
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Diabetes Mellitus</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="diamel"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">Diabetes Mellitus</div>
+                <div class="col s8 l4">
+                    <label><input name="group7" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group7" type="radio"  id="diamel"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Hypertension</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="hyp"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">Hypertension</div>
+                <div class="col s8 l4">
+                    <label><input name="group8" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group8" type="radio"  id="hyp"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">PCI Performed</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="pci"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">PCI Performed</div>
+                <div class="col s8 l4">
+                    <label><input name="group9" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group9" type="radio"  id="pci"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">PCI performed < 12hr </div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="pcitime"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">PCI performed < 12hr </div>
+                <div class="col s8 l4">
+                    <label><input name="group10" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group10" type="radio"  id="pcitime"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Hemoglobin (g%)</div>
-                <div class="col s3"><input id="hemoglobin" type="number" class="validate"></div>
+                <div class="col s4 l8">Hemoglobin (g%)</div>
+                <div class="col s8 l4"><input id="hemoglobin" type="number" class="validate"></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Serum Creatinine (mg/dL)</div>
-                <div class="col s3"><input id="creatinine" type="number" class="validate"></div>
+                <div class="col s4 l8">Serum Creatinine (mg/dL)</div>
+                <div class="col s8 l4"><input id="creatinine" type="number" class="validate"></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">HbA1C (%)</div>
-                <div class="col s3"><input id="hb1ac" type="number" class="validate"></div>
+                <div class="col s4 l8">HbA1C (%)</div>
+                <div class="col s8 l4"><input id="hb1ac" type="number" class="validate"></div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Family History of CAD</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="famcad"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">Family History of CAD</div>
+                <div class="col s8 l4">
+                    <label><input name="group11" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group11" type="radio"  id="famcad"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">Physical Activity</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="physactivity"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">Physical Activity</div>
+                <div class="col s8 l4">
+                    <label><input name="group12" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group12" type="radio"  id="physactivity"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Smoking Packs a year</div>
-                <div class="col s3">
+                <div class="col s4 l8">Smoking Packs a year</div>
+                <div class="col s8 l4">
                     <div class="row">
                         <div class="col s6">
                             <input placeholder="" id="cigperday" type="number" class="validate">
@@ -218,27 +258,31 @@
         </li>
         <li class="collection-item">
             <div class="row mbot">
-                <div class="col s9">Ejection Fraction (%)</div>
-                <div class="col s3">
-                    <p class="range-field">
-                        <input type="range" id="ejfrac" min="0" max="90" value="0"/>
-                    </p></div>
+                <div class="col s4 l8">Ejection Fraction (%)</div>
+                <div class="col s8 l4">
+                        <input id="ejfrac" type="number" class="validate">
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">H/o ACE ARB</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="acearb"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">H/o ACE ARB</div>
+                <div class="col s8 l4">
+                    <label><input name="group13" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group13" type="radio"  id="acearb"/><span>YES</span></label>
+                </div>
             </div>
         </li>
         <li class="collection-item">
             <div class="row">
-                <div class="col s9">H/o Beta Blockers</div>
-                <div class="col s3"><div class="switch"><label>NO<input type="checkbox" id="beta"><span class="lever"></span>YES</label></div></div>
+                <div class="col s4 l8">H/o Beta Blockers</div>
+                <div class="col s8 l4">
+                    <label><input name="group14" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group14" type="radio"  id="beta"/><span>YES</span></label>
             </div>
         </li>
       </ul>
-      <form class="row form center" id="pred" method='POST' onsubmit="return false">
+      <form class="row form center" id="pred" method='POST' onsubmit="return false" style="margin:3rem;">
         {% csrf_token %}
         <a class="waves-effect waves-light btn-large cyan predict modal-trigger" href='#predmodal'>Predict</a>
       </form>
@@ -250,27 +294,31 @@
         <h1>
             Mortality Prediction
         </h1>
-        <div class="row">
-            <div class="col s10 center" style="margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col s6 l10 center" style="margin-top: 20px;">
 
-                <div class="preloader-wrapper big active" id="loader">
-                    <div class="spinner-layer spinner-blue-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                      </div><div class="gap-patch">
-                        <div class="circle"></div>
-                      </div><div class="circle-clipper right">
-                        <div class="circle"></div>
+                    <div class="preloader-wrapper big active" id="loader">
+                        <div class="spinner-layer spinner-blue-only">
+                          <div class="circle-clipper left">
+                            <div class="circle"></div>
+                          </div><div class="gap-patch">
+                            <div class="circle"></div>
+                          </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                          </div>
+                        </div>
                       </div>
+                    <div class="progress cyan hidden" id="progbar">
+                        <div class="determinate red" id="measure"></div>
                     </div>
-                  </div>
-                <div class="progress cyan hidden" id="progbar">
-                    <div class="determinate red" id="measure"></div>
                 </div>
+                <div class="col s6 l2">
+                    <h2 id="meas" style="margin-top: 0;"></h2>
+                </div>
+
             </div>
-            <div class="col s2">
-                <h2 id="meas" style="margin-top: 0;"></h2>
-            </div>
+            
         </div>
 
       </div>
@@ -283,13 +331,13 @@
 
   
 
-  <footer class="page-footer cyan">
+  <footer class="page-footer grey darken-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">SBI Lab</h5>
           <ul>
-            <li><a class="black-text text-lighten-3" href="http://sbilab.iiitd.edu.in/">SBI Lab Home Home</a></li>
+            <li><a class="cyan-text text-lighten-3" href="http://sbilab.iiitd.edu.in/">SBI Lab Home Home</a></li>
           </ul>
           
 
@@ -298,14 +346,14 @@
         <div class="col l3 s12">
           <h5 class="white-text">IIIT Delhi</h5>
           <ul>
-            <li><a class="black-text text-lighten-3" href="https://iiitd.ac.in/">IIITD Home</a></li>
+            <li><a class="cyan-text text-lighten-3" href="https://iiitd.ac.in/">IIITD Home</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
+    <div class="footer-copyright black">
       <div class="container">
-      WebApp by <a class="black-text text-lighten-3" href="https://www.linkedin.com/in/dikshant-sagar-1964b7110/">Dikshant Sagar</a>
+      WebApp by <a class="cyan-text" href="https://www.linkedin.com/in/dikshant-sagar-1964b7110/">Dikshant Sagar</a>
       </div>
     </div>
   </footer>
