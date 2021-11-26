@@ -48,10 +48,18 @@
 @media (max-width:500px){
   .headboard{
     font-size: 4vw;
+    margin-top: 2%;
   }
   nav{
-    min-height: 25vh;
+    min-height: 15vh;
+    line-height: 25px;
+    padding-top: 20px;
+    
   }
+  nav i{
+    height: 25px;
+  }
+  
 }
 
 
