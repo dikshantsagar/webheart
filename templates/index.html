@@ -15,27 +15,35 @@
 </head>
 <body>
   
-  <nav class="nav-extended">
-    <nav class="grey darken-4" role="navigation">
+  
+    <nav role="navigation" style="background-color: #333333;">
       <div class="nav-wrapper center">
         <a href="#" class="headboard">
-         <i class="fas fa-heartbeat fa-lg cyan-text"></i>
-         MERC: Novel Machine Learning Extra Tree Model for Risk Prediction After ST-Elevation Myocardial Infarction <span class="cyan-text"> [ Version 1.0 ]</span>
+         <i class="fas fa-heartbeat fa-lg " style="color:#3FADA8;"></i>
+         MERC: Novel Machine Learning Extra Tree Model for Risk Prediction After ST-Elevation Myocardial Infarction <span style="color:#3FADA8;"><b>[ Version 1.0 ]</b></span>
         </a>
         
       </div>
     </nav>
-  </nav>
+  
   
 
   <div class="container" style="padding-top: 2vh;">
 
     
-        <h5>Joint collaborative work of Department of Cardiology, GB Pant Institute of Postgraduate Medical Education and Research (GIPMER),
+        <h5 class="center">Joint collaborative work of Department of Cardiology, GB Pant Institute of Postgraduate Medical Education and Research (GIPMER),
              New Delhi and SBILab, IIIT-Delhi, and  Centre of Excellence in Healthcare, IIIT-Delhi</h5>
-        <p><b>Principal Investigators:</b> Prof. Mohit Gupta, GIPMER and Prof. Anubha Gupta, IIIT-Delhi</p>
+        <p class="center"><b>Principal Investigators:</b> Prof. Mohit Gupta, GIPMER and Prof. Anubha Gupta, IIIT-Delhi</p>
         <p><b>Description:</b> In this project, we have designed and developed an Extra-Tree-based AI model (MERC) to predict all-cause 30-day mortality among the patients suffering from ST-Segment Elevation Myocardial Infarction (STEMI).  MERC utilizes the STEMI data of the North India ST-Elevation Myocardial Infarction (NORIN-STEMI) registry and included 3,635 patients presenting with STEMI at two tertiary care hospitals in New Delhi, India.</p>
+        
+        
+            <p>Please cite <b>the below paper if you use the MERC predictor in your research work.</b></p>
+            <p>
+              Arora S, Qamar A, Gupta P, Vaduganathan M, Chauhan I, Tripathi AK, et al. Design and rationale of the North Indian ST-Segment Elevation Myocardial Infarction Registry: A prospective cohort study. Clin Cardiol. 2019; 42:1140-46. DOI: 10.1002/clc.23278.
+            </p>
+
         <hr><br>
+        
       <h5>Enter Patient Details:</h5>
       <ul class="collection">
         <li class="collection-item">
@@ -287,19 +295,19 @@
       </ul>
       <form class="row form center" id="pred" method='POST' onsubmit="return false" style="margin:3rem;">
         {% csrf_token %}
-        <a class="waves-effect waves-light btn-large cyan predict modal-trigger" href='#predmodal'>Predict</a>
+        <a class="waves-effect waves-light btn-large predict modal-trigger" style="background-color:#3FADA8;" href='#predmodal'>Predict</a>
       </form>
       
   </div>
   
   <div class="modal" id="predmodal">
       <div class="modal-content">
-        <h1>
+        <h3>
             Mortality Prediction
-        </h1>
+        </h3>
         <div class="container">
             <div class="row">
-                <div class="col s6 l10 center" style="margin-top: 20px;">
+                <div class="col s10 l10 center" style="margin-top: 20px;">
 
                     <div class="preloader-wrapper big active" id="loader">
                         <div class="spinner-layer spinner-blue-only">
@@ -312,12 +320,12 @@
                           </div>
                         </div>
                       </div>
-                    <div class="progress cyan hidden" id="progbar">
+                    <div class="progress hidden" style="background-color:#3FADA8;" id="progbar">
                         <div class="determinate red" id="measure"></div>
                     </div>
                 </div>
-                <div class="col s6 l2">
-                    <h2 id="meas" style="margin-top: 0;"></h2>
+                <div class="col s2 l2">
+                    <h5 id="meas" ></h5>
                 </div>
 
             </div>
@@ -331,14 +339,7 @@
       </div>
   </div>
 
-  <div class="container">
-    <hr>
-
-    <p>Please cite <b>the below paper if you use the MERC predictor in your research work.</b></p>
-    <p>
-      Arora S, Qamar A, Gupta P, Vaduganathan M, Chauhan I, Tripathi AK, et al. Design and rationale of the North Indian ST-Segment Elevation Myocardial Infarction Registry: A prospective cohort study. Clin Cardiol. 2019; 42:1140-46. DOI: 10.1002/clc.23278.
-    </p>
-  </div>
+  
 
   
 
@@ -348,7 +349,7 @@
         <div class="col l6 s12">
           <h5 class="white-text">SBI Lab</h5>
           <ul>
-            <li><a class="cyan-text text-lighten-3" href="http://sbilab.iiitd.edu.in/">SBI Lab Home</a></li>
+            <li><a style="color:#3FADA8;" href="http://sbilab.iiitd.edu.in/">SBI Lab Home</a></li>
           </ul>
           
 
@@ -357,14 +358,14 @@
         <div class="col l3 s12">
           <h5 class="white-text">IIIT Delhi</h5>
           <ul>
-            <li><a class="cyan-text text-lighten-3" href="https://iiitd.ac.in/">IIITD Home</a></li>
+            <li><a style="color:#3FADA8;" href="https://iiitd.ac.in/">IIITD Home</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright black">
       <div class="container">
-      WebApp by <a class="cyan-text" href="https://www.linkedin.com/in/dikshant-sagar-1964b7110/">Dikshant Sagar</a>
+      WebApp by <a style="color:#3FADA8;" href="https://www.linkedin.com/in/dikshant-sagar-1964b7110/">Dikshant Sagar</a>
       </div>
     </div>
   </footer>
