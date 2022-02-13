@@ -1,0 +1,437 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>MERC v1.0</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static "css/materialize.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static "css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="icon" href="{% static "favicon.ico" %}" type="image/x-icon">
+  
+</head>
+
+<body>
+  
+  
+    <nav role="navigation" style="background-color: #3FADA8;">
+      <div class="nav-wrapper center">
+          
+        <a href="#" class="headboard " style="color: #ebebeb;">
+            Novel <span class="black-text">M</span>achine Learning <span class="black-text">E</span>xtra Tree Model for <span class="black-text">R</span>isk Prediction After
+            <span class="black-text">C</span>oronary Artery Disease (ST-Elevation Myocardial Infarction)<span style="color:black;"> [ Version 1.0 ]</span>
+        </a>
+        
+
+      </div>
+    </nav>
+  
+  
+
+  <div class="container" style="padding-top: 2vh;">
+        <div class="row">
+            <div class="col s6">
+                <img id="logo" src="{% static "stemi-logo.png" %}">
+            </div>
+            <div class="right-align col s6" >
+                <img id="logo2" src="{% static "sbilogo.png" %}"  onclick="window.location.href='http://sbilab.iiitd.edu.in/'">
+            </div>
+            
+    </div>
+        
+        
+
+      
+      <ul class="collection card" style="border-left: 7px solid #3FADA8 ;border-right: 7px solid #3FADA8 ;padding:15px; border-radius: 2px;">
+        <h5 class="center lemon">
+            <span style="color: #3FADA8;">MERC</span> model to predict 30-day mortality after STEMI <br> (NORIN-STEMI study)
+        </h5><br>
+        <h6 class="lemon">Enter Patient Details:</h6><br>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Age</div>
+                <div class="input-field col s6 l4">
+                    <input id="age" type="number" class="validate" min="0" >
+                    <span class="helper-text" data-error="Age cannot be Negative." ></span>
+                </div>
+                
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Gender</div>
+                <div class="col s6 l4">
+                    
+                    <label><input name="group1" type="radio" checked /><span>Male</span></label>  
+                    <label><input name="group1" type="radio"  id="gender"/><span>Female</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Syncope</div>
+                <div class="col s6 l4">
+                    <label><input name="group2" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group2" type="radio"  id="syncope"/><span>Present</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Diaphoresis</div>
+                <div class="col s6 l4">
+                    <label><input name="group3" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group3" type="radio"  id="diaphoresis"/><span>Present</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Mitral Regurgitation</div>
+                
+                <div class="input-field col s6 l4">
+                 <select id="mr">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">No</option>
+                    <option value="2">Mild</option>
+                    <option value="3">Moderate</option>
+                    <option value="4">Severe</option>
+                  </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Heart Failure at presentation</div>
+                <div class="col s6 l4">
+                    <label><input name="group4" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group4" type="radio"  id="hfap"/><span>Present</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Cardiogenic Shock at presentation</div>
+                <div class="col s6 l4">
+                    <label><input name="group5" type="radio" checked /><span>Absent</span></label>  
+                    <label><input name="group5" type="radio"  id="csap"/><span>Present</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Delay to Hospital (If patient delay more than 6hr after MI)</div>
+                <div class="col s6 l4">
+                    <label><input name="group6" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group6" type="radio"  id="delay"/><span>YES</span></label>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Heart wall Involved</div>
+                <div class="input-field col s6 l4">
+                    <select multiple id="wall">
+                       <option value="" disabled >Choose your option</option>
+                       <option value="1" >Anterior Wall MI</option>
+                       <option value="2">Posterior Wall MI</option>
+                       <option value="3">Lateral Wall MI</option>
+                       <option value="4">Inferior Wall MI</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <!-- <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Culprit Coronary Artery in Algorithm</div>
+                <div class="input-field col s6 l4">
+                    <select multiple id="angiography">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="1">LAD Angiography</option>
+                       <option value="2">LCX Angiography</option>
+                       <option value="3">LMCA Angiography</option>
+                       <option value="4">RCA Angiography</option>
+                       <option value="5">SCAD Angiography</option>
+                     </select>
+                </div>
+            </div>
+        </li> -->
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">LAD TIMI flow grade</div>
+                <div class="input-field col s6 l4">
+                    <select id="timi">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">RCA  TIMI flow grade</div>
+                <div class="input-field col s6 l4">
+                    <select id="rca">
+                       <option value="" disabled selected>Choose your option</option>
+                       <option value="0">0</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                     </select>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Diabetes Mellitus</div>
+                <div class="col s6 l4">
+                    <label><input name="group7" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group7" type="radio"  id="diamel"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Hypertension</div>
+                <div class="col s6 l4">
+                    <label><input name="group8" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group8" type="radio"  id="hyp"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Medical Therapy without PCI</div>
+                <div class="col s6 l4">
+                    <label><input name="group9" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group9" type="radio"  id="pci"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">PCI performed < 12hr </div>
+                <div class="col s6 l4">
+                    <label><input name="group10" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group10" type="radio"  id="pcitime"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Hemoglobin (g%)</div>
+                <div class=" input-field col s6 l4">
+                    <input id="hemoglobin" type="number" class="validate" min="0" step="0.0000001">
+                    <span class="helper-text" data-error="Hemoglobin cannot be negative" ></span>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Serum Creatinine (mg/dL)</div>
+                <div class=" input-field col s6 l4">
+                    <input id="creatinine" type="number" class="validate" min="0" step="0.0000001">
+                    <span class="helper-text" data-error="Creatinine cannot be negative" ></span>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">HbA1C (%)</div>
+                <div class="input-field col s6 l4">
+                    <input id="hb1ac" type="number" class="validate" min="0" step="0.0000001">
+                    <span class="helper-text" data-error="HbA1C cannot be negative" ></span>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Family History of CAD</div>
+                <div class="col s6 l4">
+                    <label><input name="group11" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group11" type="radio"  id="famcad"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Physical Activity</div>
+                <div class="col s6 l4">
+                    <label><input name="group12" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group12" type="radio"  id="physactivity"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">Smoking (pack-year)</div>
+                <div class="col s6 l4">
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="input-field col s12 l8">
+                            <input placeholder="" id="cigperday" type="number" class="validate" min="0">
+                            <label for="cigperday">Cigarettes per day</label>
+                            <span class="helper-text" data-error="Cannot be negative" ></span>
+                        </div>
+                        <div class="input-field col s12 l4">
+                            <input placeholder="" id="smokingyears" type="number" class="validate" min="0">
+                            <label for="smokingyears">Years</label>
+                            <span class="helper-text" data-error="Cannot be negative" ></span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row mbot">
+                <div class="col s6 l8">LV Ejection Fraction (%)</div>
+                <div class=" input-field col s6 l4">
+                        <input id="ejfrac" type="number" class="validate" min="0" step="0.0000001">
+                        <span class="helper-text" data-error="Cannot be negative" ></span>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Pre-Treatment ACEi/ARB</div>
+                <div class="col s6 l4">
+                    <label><input name="group13" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group13" type="radio"  id="acearb"/><span>YES</span></label>
+                </div>
+            </div>
+        </li>
+        <li class="collection-item card-panel">
+            <div class="row">
+                <div class="col s6 l8">Pre-Treatment Beta Blockers</div>
+                <div class="col s6 l4">
+                    <label><input name="group14" type="radio" checked /><span>NO</span></label>  
+                    <label><input name="group14" type="radio"  id="beta"/><span>YES</span></label>
+            </div>
+        </li>
+
+        {% csrf_token %}
+        <form class="row form center " id="pred" method='POST' onsubmit="return false" style="margin:2rem;">
+            <a class="waves-effect waves-light btn-large predict modal-trigger lemon" href='#predmodal'>Predict</a>
+          </form>
+          
+      </ul>
+      
+    
+  </div>
+  
+  <div class="modal mod" id="predmodal">
+      <div class="modal-content">
+        <h3 class="lemon">
+            Mortality Prediction
+        </h3>
+        <div>
+            <div class="row">
+                <div class="col s10 l10 center" style="margin-top: 20px;">
+
+                    <div class="preloader-wrapper big active" id="loader">
+                        <div class="spinner-layer spinner-only">
+                          <div class="circle-clipper left">
+                            <div class="circle"></div>
+                          </div><div class="gap-patch">
+                            <div class="circle"></div>
+                          </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="progress hidden" style="background-color:#3FADA8;" id="progbar">
+                        <div class="determinate red" id="measure"></div>
+                    </div>
+                </div>
+                <div class="col s2 l2">
+                    <h5 id="meas" ></h5>
+                </div>
+
+            </div>
+            
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <a href="/insight" class="modal-close waves-effect waves-green btn-small lemon" >LIME Interpretability Results</a>
+        <a href="/shap" class="modal-close waves-effect waves-green btn-small lemon" >SHAP Interpretability Results</a>
+        <a href="." class="btn-floating btn-small waves-effect waves-light " ><i class="material-icons">replay</i></a>
+        
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="card" style="padding:20px; border-radius: 2px; border-left: 7px solid #3FADA8 ;border-right: 7px solid #3FADA8 ;">
+
+        <!-- <h6 class="center">
+            North India ST-Elevation Myocardial Infarction (<b>NORIN-STEMI</b>) study based
+            <span style="color: orangered; font-weight: bold;">M</span>achine Learning-<span style="color: orangered;font-weight: bold;">E</span>xtra-Tree classifier model based predictor for 
+            high-<span style="color: orangered;font-weight: bold;">R</span>isk patients of ST-Segment Elevation Myocardial Infarction (STEMI) 
+            <span style="color: orangered;font-weight: bold;">C</span>oronary Artery Disease
+        </h6> -->
+    
+        <p class="center" style="font-size: 16px;">Principal Investigators: <a href="https://www.linkedin.com/in/drmohitgupta"><b>Prof. Mohit Gupta, GIPMER </b></a> and <a href="https://www.iiitd.ac.in/anubha"><b>Prof. Anubha Gupta, IIIT-Delhi</b></a></p>
+        <p class="center">Join collaboration work of Department of Cardiology, GB Pant Institute of Postgraduate Medical Education and Research (GIPMER),
+            New Delhi and SBILab, IIIT-Delhi, and  Centre of Excellence in Healthcare, IIIT-Delhi.</p>
+    
+        
+        <p><b>Citation: </b>
+            Arora S, Qamar A, Gupta P, Vaduganathan M, Chauhan I, Tripathi AK, et al. Design and rationale of the North Indian ST-Segment Elevation Myocardial Infarction Registry: A prospective cohort study. Clin Cardiol. 2019; 42:1140-46. DOI: 10.1002/clc.23278.
+        </p>
+        <p><b> Please Note: </b>
+            AI model's results need to be confirmed by a cardiologist, the report cannot be used for any type of interventions without a doctor's consent.
+        </p>
+    
+      </div>
+  </div>
+
+
+
+    
+  
+
+  <footer class="page-footer" style="background: #3FADA8;">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="black-text">SBILab</h5>
+          <ul>
+            <li><a style="color:white;" href="http://sbilab.iiitd.edu.in/">SBILab Home</a></li>
+          </ul>
+
+        </div>
+        <div class="col l6 s12 ">
+          <h5 class="black-text">IIIT-Delhi</h5>
+          <ul>
+            <li><a style="color:white;" href="https://iiitd.ac.in/">IIIT-Delhi Home</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="footer-copyright black">
+      <div class="container">
+            WebApp by <a style="color:#3FADA8;" href="https://www.linkedin.com/in/dikshant-sagar-1964b7110/">Dikshant Sagar</a> 
+            <!--<span class="right" > User Visits : <span class="new badge visit" data-badge-caption="" style="font-size: 1rem;
+                line-height: 24px;">{{ visits }}</span></span> -->
+      </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/e0a08b5c11.js" crossorigin="anonymous"></script>
+  <script src="{% static "js/materialize.js" %}"></script>
+  <script src="{% static "js/init.js" %}"></script>
+
+</body>
+</html>
